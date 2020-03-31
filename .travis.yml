@@ -1,0 +1,15 @@
+language: shell
+services:
+- docker
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: bash .travis/deploy.sh nightly
+  on:
+    branch: master
+- provider: script
+  skip_cleanup: true
+  script: bash .travis/deploy.sh latest
+  on:
+    tags: true
+    all_branches: true
