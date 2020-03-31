@@ -1,0 +1,20 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: openshift-acme-whitelist-updater
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - list
+  - get
+- apiGroups:
+  - ""
+  resources:
+  - routes
+  verbs:
+  - list
+  - get
+  - patch
