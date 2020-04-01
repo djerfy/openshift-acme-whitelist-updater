@@ -18,7 +18,7 @@ def WhitelistRouteUpdater():
         print("Running in namespace: {}".format(namespace))
 
     kubernetes_config = client.Configuration()
-    kubernetes_client = client.api_client.ApiClient(configuration=k8s_config)
+    kubernetes_client = client.api_client.ApiClient(configuration=kubernetes_config)
     openshift_client  = DynamicClient(kubernetes_client)
 
     routes = openshift_client.resources.get(api_version='v1', kind='Route')

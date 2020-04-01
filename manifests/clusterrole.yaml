@@ -18,3 +18,4 @@ rules:
   - list
   - get
   - patch
+  - watch
